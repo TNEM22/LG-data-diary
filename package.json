@@ -1,0 +1,52 @@
+{
+  "name": "lg-data-diary",
+  "version": "1.0.0",
+  "description": "Lg Data Diary Backend framework.",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akatsuki-Coding-Club/LG_Data_Diary_Backend.git"
+  },
+  "keywords": [
+    "lgdd"
+  ],
+  "author": "Akatsuki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akatsuki-Coding-Club/LG_Data_Diary_Backend/issues"
+  },
+  "homepage": "https://github.com/Akatsuki-Coding-Club/LG_Data_Diary_Backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.3",
+    "nodemailer": "^6.9.5",
+    "otp-generator": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "win-node-env": "^0.6.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
