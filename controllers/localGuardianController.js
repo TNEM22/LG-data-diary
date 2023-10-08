@@ -1,12 +1,12 @@
-const Student = require('../models/studentModel');
+const LocalGuardian = require('../models/localGuardianModel');
 
-exports.getAllStudents = async (req, res) => {
+exports.getAllLocalGuardians = async (req, res) => {
   try {
-    const students = await Student.find();
+    const localGuardians = await LocalGuardian.find();
     res.status(200).json({
       status: 'success',
-      results: students.length,
-      data: { students },
+      results: localGuardians.length,
+      data: { localGuardians },
     });
   } catch (err) {
     res.status(400).json({
@@ -16,14 +16,14 @@ exports.getAllStudents = async (req, res) => {
   }
 };
 
-exports.createStudent = async (req, res) => {
+exports.createLocalGuardian = async (req, res) => {
   try {
-    const newStudent = await Student.create(req.body);
+    const newLocalGuardian = await LocalGuardian.create(req.body);
 
     res.status(201).json({
       status: 'success',
       data: {
-        student: newStudent,
+        student: newLocalGuardian,
       },
     });
   } catch (err) {
@@ -34,14 +34,14 @@ exports.createStudent = async (req, res) => {
   }
 };
 
-exports.getStudent = async (req, res) => {
+exports.getLocalGuardian = async (req, res) => {
   try {
-    const student = await Student.findById(req.params.id);
+    const localGuardian = await LocalGuardian.findById(req.params.id);
 
     res.status(200).json({
       status: 'success',
       data: {
-        student,
+        localGuardian,
       },
     });
   } catch (err) {
@@ -52,17 +52,21 @@ exports.getStudent = async (req, res) => {
   }
 };
 
-exports.updateStudent = async (req, res) => {
+exports.updateLocalGuardian = async (req, res) => {
   try {
-    const student = await Student.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const localGuardian = await LocalGuardian.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      },
+    );
 
     res.status(200).json({
       status: 'success',
       data: {
-        student: student,
+        localGuardian: localGuardian,
       },
     });
   } catch (err) {
@@ -73,9 +77,9 @@ exports.updateStudent = async (req, res) => {
   }
 };
 
-exports.deleteStudent = async (req, res) => {
+exports.deleteLocalGuardian = async (req, res) => {
   try {
-    await Student.findByIdAndDelete(req.params.id);
+    await LocalGuardian.findByIdAndDelete(req.params.id);
 
     res.status(204).json({
       status: 'success',
